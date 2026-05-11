@@ -73,9 +73,9 @@ class spotifycls:
             
 
             song_data = {
-                "\nname": item["name"],
-                "\nartist": item["artists"][0]["name"],
-                "\nlink"  : item["external_urls"]["spotify"],
+                "name": item["name"],
+                "artist": item["artists"][0]["name"],
+                "link"  : item["external_urls"]["spotify"],
                 
             }
 
@@ -107,7 +107,13 @@ final_sender=query_final.query(final_report_for_query,weather_condition)
 print(final_sender)
 songs = spotify.search_tracks(final_sender)
 
-print(songs)
+for song in songs:
+    print (f"song name : {song['name']}")
+    print(f"artist's name : {song['artist']}")
+    print(f"playlist link : {song['link']}")
+    print("-"*40)
+          
+
 
 
 
